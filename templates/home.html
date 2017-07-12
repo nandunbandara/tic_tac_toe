@@ -1,0 +1,47 @@
+<div style="margin-top:2em;"></div>
+<!--<div class="row">-->
+    <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-success" ng-show="home.success_msg">
+            <strong>Success!</strong> {{home.success_msg}}
+        </div>
+        <div class="alert alert-danger" ng-show="home.error_msg">
+            <strong>Danger!</strong> {{home.error_msg}}
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" class="form-control input-lg" ng-model="home.search_key" placeholder="Search Movie">
+                </div>
+                <button class="btn btn-primary btn-lg" ng-click="home.getMoviesByTitle(home.search_key)">Search</button>
+            </div>
+            <!--<div class="row">-->
+                <div class="col-md-8 col-md-offset-2">
+                    <label class="radio-inline"><input type="radio" value="" name="search_field">By IMDB</label>
+                    <label class="radio-inline"><input type="radio" value="" name="search_field">By Title</label>
+                    <label class="radio-inline"><input type="radio" value="" name="search_field">By Release Country</label>
+                </div>
+            <!--</div>-->
+        </form>
+    </div><br><br><br>
+    <div class="container">
+        <table class="table table-responsive" style="margin-top: 2em;">
+            <tr>
+                <th>IMDB</th>
+                <th>Title</th>
+                <th>Release Country</th>
+                <th>Release Date</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="item in home.movies | filter:home.search_key">
+                <td>{{item._source.imdbId}}</td>
+                <td>{{item._source.title}}</td>
+                <td>{{item._source.releaseCountry}}</td>
+                <td>{{item._source.releaseDate}}</td>
+                <td>
+                    <button class="btn btn-warning" ng-click="home.goToUpdateView(item)">Edit</button>
+                    <button class="btn btn-danger" ng-click="home.delete(item._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+<!--</div>-->
