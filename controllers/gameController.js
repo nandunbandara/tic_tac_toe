@@ -5,8 +5,10 @@ angular.module('ttt.gameController',[])
 
 .controller('gameController',['User',function(User){
     const app = this;
-    app.user = User.getUser().user;
-    console.log(User.getUser());
+    //load user data
+    app.uid = User.getUserId();
+    app.displayName = User.getDisplayName();
+    app.photoURL = User.getPhotoURL();
 
     app.signout = function(){
 
