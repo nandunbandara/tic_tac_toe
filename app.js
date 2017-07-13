@@ -7,8 +7,9 @@ angular.module('ttt',[
     'ttt.routes',
     //controllers
     'ttt.homeController',
-    'ttt.gameController'
+    'ttt.gameController',
     //services
+    'ttt.userServices'
 ])
 
     //firebase configuration
@@ -23,3 +24,4 @@ angular.module('ttt',[
     };
     firebase.initializeApp(config);
 }])
+

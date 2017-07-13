@@ -3,5 +3,12 @@
  */
 angular.module('ttt.gameController',[])
 
-.controller('gameController',[function(){
+.controller('gameController',['User',function(User){
+    const app = this;
+    app.user = User.getUser().user;
+    console.log(User.getUser());
+
+    app.signout = function(){
+
+    }
 }])

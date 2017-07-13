@@ -11,7 +11,7 @@ angular.module('ttt.routes',['ngRoute'])
         })
 
         .when('/game',{
-            tempalteUrl: 'templates/gameInterface.html',
+            templateUrl: 'templates/gameInterface.html',
             controller: 'gameController as game'
         })
 }])
