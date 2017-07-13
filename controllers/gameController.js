@@ -4,5 +4,4 @@
 angular.module('ttt.gameController',[])
 
 .controller('gameController',[function(){
-
 }])

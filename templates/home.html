@@ -2,7 +2,7 @@
 
     <div class="col-md-8 col-md-offset-2 text-center">
         <h1>Tic-Tac-Toe</h1>
-        <button class="btn btn-lg btn-primary">
+        <button class="btn btn-lg btn-primary" ng-click="home.login()">
             <i class="fa fa-facebook-official" aria-hidden="true"></i>
             &nbsp;&nbsp;Login with Facebook
         </button><br><br>
@@ -18,5 +18,14 @@
         </a>
         <a href="http://nandunb.wordpress.com" target="_blank">
             <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
-        </a>
+        </a><br><br>
+
+        <!--error message-->
+        <div class="alert alert-danger" ng-show="home.error_msg">
+            <strong>Error: </strong>{{home.error_msg}}
+        </div>
+        <!--success message-->
+        <div class="alert alert-success">
+            <strong>Success! </strong>{{home.success_msg}}
+        </div>
     </div>
